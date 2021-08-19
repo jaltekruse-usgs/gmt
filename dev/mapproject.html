@@ -134,15 +134,16 @@
 <li class="toctree-l1"><a class="reference internal" href="std-opts-classic.html">Common Options (Classic Mode)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules-classic.html">Modules (Classic Mode)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="devdocs.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/debug.html">Debugging GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/devdocs.html">GMT Enhancement Proposals</a></li>
 </ul>
 
             
@@ -242,10 +243,11 @@
 [ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong><strong>b</strong>|<strong>B</strong>|<strong>f</strong>|<strong>F</strong>|<strong>o</strong>|<strong>O</strong>[<em>lon0</em>/<em>lat0</em>][<strong>+v</strong>] ]
 [ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong>[<em>dx</em>/<em>dy</em>][<strong>+m</strong>] ]
 [ <a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong><strong>c</strong>|<strong>i</strong>|<strong>p</strong> ]
-[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong>[<em>datum</em>] ] [ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong>[<em>unit</em>] ]
+[ <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong>[<em>datum</em>] ]
+[ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong>[<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>M</strong>|<strong>n</strong>|<strong>u</strong>|<strong>c</strong>|<strong>i</strong>|<strong>p</strong>] ]
 [ <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong>[<em>lon0</em>/<em>lat0</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+u</strong><em>unit</em>][<strong>+v</strong>] ]
 [ <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> ]
-[ <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong><em>line.xy</em>[<strong>+u</strong><em>unit</em>][<strong>+p</strong>] ]
+[ <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong><em>table</em>[<strong>+p</strong>][<strong>+u</strong><em>unit</em>] ]
 [ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>g</strong>|<strong>m</strong>] ]
 [ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong>[<strong>d</strong>|<strong>e</strong>] ]
 [ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong> ]
@@ -323,7 +325,7 @@ is given then we compute the azimuth (or back-azimuth) from the
 previous point.  Alternatively, append <strong>+v</strong> to obtain a
 <em>variable</em> 2nd point (<em>lon0</em>/<em>lat0</em>) via columns 3-4 in the input file.
 See <a class="reference internal" href="#output-order">Output Order</a> for how <strong>-A</strong> affects the output record.  If <strong>-R</strong>
-and <strong>-J*</strong> are given the we project the coordinates first and then
+and <strong>-J</strong> are given the we project the coordinates first and then
 compute Cartesian angles instead.</p>
 </dd>
 </dl>
@@ -355,7 +357,7 @@ omitted). If <em>datum</em> is - or not given we assume WGS-84.</p>
 </dd>
 </dl>
 <dl class="simple" id="f">
-<dt><strong>-F</strong>[<em>unit</em>]</dt><dd><p>Force 1:1 scaling, i.e., output (or input, see <strong>-I</strong>) data are in
+<dt><strong>-F</strong>[<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>M</strong>|<strong>n</strong>|<strong>u</strong>|<strong>c</strong>|<strong>i</strong>|<strong>p</strong>]</dt><dd><p>Force 1:1 scaling, i.e., output (or input, see <strong>-I</strong>) data are in
 actual projected meters. To specify other units, append the desired
 unit (see <a class="reference internal" href="#units">Units</a>). Without <strong>-F</strong>, the output (or input, see <strong>-I</strong>)
 are in the units specified by <a class="reference internal" href="gmt.conf.html#term-PROJ_LENGTH_UNIT"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> (but see
@@ -385,8 +387,8 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 </dd>
 </dl>
 <dl class="simple" id="l">
-<dt><strong>-L</strong><em>line.xy</em>[<strong>+u</strong><em>unit</em> |<em>c</em>  |<em>C</em>][<strong>+p</strong>]</dt><dd><p>Determine the shortest distance from the input data points to the
-line(s) given in the ASCII multisegment file <em>line.xy</em>. The distance
+<dt><strong>-L</strong><em>table</em>[<strong>+p</strong>][<strong>+u</strong><em>unit</em> |<em>c</em>  |<em>C</em>]</dt><dd><p>Determine the shortest distance from the input data points to the
+line(s) given in the ASCII multisegment file <em>table</em>. The distance
 and the coordinates of the nearest point will be appended to the
 output as three new columns. Append the distance unit via <strong>+u</strong> (see <a class="reference internal" href="#units">Units</a>
 for available units and how distances are computed [great circle using authalic radius]),
@@ -469,11 +471,11 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 </dd>
 </dl>
 <dl class="simple">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns].</p>
+<dt><strong>-bi</strong><em>record</em>[<strong>+b</strong>|<strong>l</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary table input. [Default is 2 input columns].</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is same as input].</p>
+<dt><strong>-bo</strong><em>record</em>[<strong>+b</strong>|<strong>l</strong>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for table output. [Default is same as input].</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -489,7 +491,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 </dd>
 </dl>
 <dl class="simple">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine data gaps and line breaks.  </p>
+<dt><strong>-g</strong><strong>x</strong>|<strong>y</strong>|<strong>z</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong><em>gap</em>[<strong>u</strong>][<strong>+a</strong>][<strong>+c</strong><em>col</em>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine data gaps and line breaks.  </p>
 </dd>
 </dl>
 <dl class="simple">
@@ -497,7 +499,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 </dd>
 </dl>
 <dl class="simple">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+d</strong><em>divide</em>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <strong>t</strong> is trailing text, append <em>word</em> to read one word only).</p>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+d</strong><em>divisor</em>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <strong>t</strong> is trailing text, append <em>word</em> to read one word only).</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -513,7 +515,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 </dd>
 </dl>
 <dl class="simple">
-<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>] <a class="reference internal" href="gmt.html#q-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input or output rows or data range(s) [all].</p>
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>|<em>limits</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>] <a class="reference internal" href="gmt.html#q-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input or output rows or data limit(s) [all].</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -601,9 +603,9 @@ Clarke-1866 ellipsoid) to WGS 84, run</p>
 </div></blockquote>
 <p>To compute the closest distance (in km) between each point in the input
 file quakes.txt and the line segments given in the multisegment ASCII
-file coastline.xy, run</p>
+file coastline.txt, run</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject quakes.txt -Lcoastline.xy+uk &gt; quake_dist.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject quakes.txt -Lcoastline.txt+uk &gt; quake_dist.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -721,7 +723,7 @@ North-Holland Publ., ISBN: 0 444 86149 1.</p>
     <p>
         &#169; Copyright 2021, The GMT Team..
       <span class="lastupdated">
-        Last updated on Jun 06, 2021.
+        Last updated on Aug 19, 2021.
       </span>
 
     </p>

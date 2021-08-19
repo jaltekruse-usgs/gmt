@@ -227,15 +227,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../std-opts-classic.html">Common Options (Classic Mode)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../modules-classic.html">Modules (Classic Mode)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../debug.html">Debugging GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../devdocs.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdocs/team.html">Team Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdocs/rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdocs/debug.html">Debugging GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdocs/api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdocs/postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devdocs/devdocs.html">GMT Enhancement Proposals</a></li>
 </ul>
 
             
@@ -816,6 +817,9 @@ position of different quadrants for perspective and polar plots and select the
 equivalent of <strong>WrStZ</strong>. The default for the Gnomonic and general perspective
 projections is <strong>WESNZ</strong>. The default for non-perspective, non-Gnomonic, and
 non-polar plots using <strong>MAP_FRAME_AXES</strong>=<strong>auto</strong> is <strong>WrStZ</strong>.</p>
+<p>For <strong>MAP_LABEL_OFFSET, **auto</strong> will scale the offset based on figure size if
+<strong>MAP_LABEL_MODE</strong> is set to <strong>annot</strong>, but will default to <strong>32p</strong> if
+<strong>MAP_LABEL_MODE</strong> is set to <strong>axis</strong>.</p>
 </div>
 <div class="section" id="changing-gmt-defaults">
 <h3><span class="section-number">3.3.3. </span>Changing GMT defaults<a class="headerlink" href="#changing-gmt-defaults" title="Permalink to this headline">¶</a></h3>
@@ -1127,9 +1131,9 @@ binary metafile plot systems since such files cannot easily be modified
 after they have been created. GMT programs also write many comments to
 the plot file which make it easier for users to orient themselves should
 they need to edit the file (e.g., % Start of x-axis) <a class="footnote-reference brackets" href="#id18" id="id7">16</a>. All
-GMT programs create PostScript code by calling the <a class="reference internal" href="../postscriptlight.html"><span class="doc">PSL</span></a> plot
+GMT programs create PostScript code by calling the <a class="reference internal" href="../devdocs/postscriptlight.html"><span class="doc">PSL</span></a> plot
 library (The user may call these functions from his/her own C or FORTRAN
-plot programs. See the manual pages for <a class="reference internal" href="../postscriptlight.html"><span class="doc">PSL</span></a> syntax). Although
+plot programs. See the manual pages for <a class="reference internal" href="../devdocs/postscriptlight.html"><span class="doc">PSL</span></a> syntax). Although
 GMT programs can create very individualized plot code, there will
 always be cases not covered by these programs. Some knowledge of
 PostScript will enable the user to add such features directly into the
@@ -3292,7 +3296,7 @@ conventions for netCDF grids. Thus, products created under those
 conventions (provided the grid is 2-, 3-, 4-, or 5-dimensional) can be
 read directly by GMT and the netCDF grids written by GMT can be read
 by other programs that conform to those conventions. Three such programs are
-<a class="reference external" href="http://meteora.ucsd.edu/~pierce/ncview_home_page.html">ncview</a>, <a class="reference external" href="http://www.giss.nasa.gov/tools/panoply/">Panoply</a>, and <a class="reference external" href="https://www.pmel.noaa.gov/epic/java/ncBrowse/">ncBrowse</a> ; others can be found on the
+<a class="reference external" href="https://cirrus.ucsd.edu/~pierce/software/ncview/index.html">ncview</a>, <a class="reference external" href="http://www.giss.nasa.gov/tools/panoply/">Panoply</a>, and <a class="reference external" href="https://www.pmel.noaa.gov/epic/java/ncBrowse/">ncBrowse</a> ; others can be found on the
 <a class="reference external" href="http://www.unidata.ucar.edu/software/netcdf/software.html">netCDF website</a>.
 Note that although many additional programs can read netCDF files, some are unable
 to read netcdf 4 files (if data compression has been applied).</p>
@@ -3988,7 +3992,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#term-PS_COMMENTS">
     <p>
         &#169; Copyright 2021, The GMT Team..
       <span class="lastupdated">
-        Last updated on Jun 06, 2021.
+        Last updated on Aug 19, 2021.
       </span>
 
     </p>

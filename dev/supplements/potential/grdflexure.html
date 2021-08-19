@@ -135,15 +135,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../std-opts-classic.html">Common Options (Classic Mode)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modules-classic.html">Modules (Classic Mode)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../debug.html">Debugging GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../devdocs.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/team.html">Team Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/debug.html">Debugging GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/devdocs.html">GMT Enhancement Proposals</a></li>
 </ul>
 
             
@@ -243,14 +244,14 @@
 <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong>[<em>Te</em>[<strong>k</strong>][/<em>Te2</em>[<strong>k</strong>]]]
 <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><em>outgrid</em>
 [ <a class="reference internal" href="#a"><span><strong>-A</strong></span></a></strong><em>Nx</em>/<em>Ny</em>/<em>Nxy</em> ]
-[ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong><strong>p</strong><em>poisson</em> ] [ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong><strong>y</strong><em>Young</em> ]
+[ <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong><strong>p</strong>|<strong>y</strong><em>value</em> ]
 [ <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong><em>nu_a</em>[/<em>h_a</em>[<strong>k</strong>]/<em>nu_m</em>] ]
 [ <a class="reference internal" href="#l"><span><strong>-L</strong></span></a></strong><em>list</em> ]
 [ <a class="reference internal" href="#m"><span><strong>-M</strong></span></a></strong><em>tm</em> ]
 [ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><em>params</em> ]
 [ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong> ]
 [ <a class="reference internal" href="#s"><span><strong>-S</strong></span></a></strong><em>beta</em> ]
-[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong><em>t0</em>[/<em>t1</em>/<em>dt</em>]|<em>file</em>[<strong>+l</strong>] ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong><em>t0</em>[/<em>t1</em>/<em>dt</em>[<strong>+l</strong>]]|<em>file</em> ]
 [ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong><em>wd</em>][<strong>k</strong>]
 [ <a class="reference internal" href="#z"><span><strong>-Z</strong></span></a></strong><em>zm</em>][<strong>k</strong>]
@@ -332,9 +333,8 @@ stresses.</p>
 </dd>
 </dl>
 <dl class="simple" id="c">
-<dt><strong>-Cp</strong><em>poisson</em></dt><dd><p>Change the default value of Poisson’s ratio [0.25].</p>
-</dd>
-<dt><strong>-Cy</strong><em>Young</em></dt><dd><p>Change the default value of Young’s modulus [7.0e10 N/m^2].</p>
+<dt><strong>-C</strong><strong>p</strong>|<strong>y</strong><em>value</em></dt><dd><p>Append <strong>p</strong> or <strong>y</strong> to change the current value of Poisson’s ratio [0.25]
+or Young’s modulus [7.0e10 N/m^2], respectively.</p>
 </dd>
 </dl>
 <dl class="simple" id="f">
@@ -419,7 +419,7 @@ material of density <em>rw</em> (i.e., just water) [1].</p>
 </dd>
 </dl>
 <dl class="simple" id="t">
-<dt><strong>-T</strong><em>t0</em>[/<em>t1</em>/<em>dt</em>]|<em>file</em>[<strong>+l</strong>]</dt><dd><p>Specify <em>t0</em>, <em>t1</em>, and time increment (<em>dt</em>) for a sequence of calculations
+<dt><strong>-T</strong><em>t0</em>[/<em>t1</em>/<em>dt</em>[<strong>+l</strong>]]|<em>file</em></dt><dd><p>Specify <em>t0</em>, <em>t1</em>, and time increment (<em>dt</em>) for a sequence of calculations
 [Default is one calculation, with no time dependency].  For a single specific time, just
 give start time <em>t0</em>. Default <em>unit</em> is years; append <strong>k</strong> for kyr and <strong>M</strong> for Myr.
 For a logarithmic time scale, append <strong>+l</strong> and specify <em>n</em> steps instead of <em>dt</em>.
@@ -660,7 +660,7 @@ J. Geophys. Res., 106(B9), 19,431-19,441,
     <p>
         &#169; Copyright 2021, The GMT Team..
       <span class="lastupdated">
-        Last updated on Jun 06, 2021.
+        Last updated on Aug 19, 2021.
       </span>
 
     </p>

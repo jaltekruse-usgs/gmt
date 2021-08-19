@@ -134,15 +134,16 @@
 <li class="toctree-l1"><a class="reference internal" href="std-opts-classic.html">Common Options (Classic Mode)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules-classic.html">Modules (Classic Mode)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="devdocs.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/debug.html">Debugging GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devdocs/devdocs.html">GMT Enhancement Proposals</a></li>
 </ul>
 
             
@@ -963,9 +964,18 @@ Choose <strong>auto</strong> for <a class="reference internal" href="cookbook/fe
 [default is <a class="reference internal" href="theme-settings.html"><span class="doc">theme dependent</span></a>]. Choose <strong>auto</strong> for
 <a class="reference internal" href="cookbook/features.html#auto-scaling"><span class="std std-ref">automatic scaling with plot size</span></a>.</p>
 </dd>
+<dt id="term-MAP_LABEL_MODE"><strong>MAP_LABEL_MODE</strong><a class="headerlink" href="#term-MAP_LABEL_MODE" title="Permalink to this term">¶</a></dt><dd><p>Determines from where the label offset is measured: Choose <strong>annot</strong>
+to mean the distance from the end of the annotation or <strong>axis</strong>
+to mean the distance from the axis.  To set separate modes for the
+<em>x</em> and <em>y</em> axes, separate modes by a slash [default is <strong>annot/annot</strong>]. Choose
+<strong>axis</strong> if you need to align multiple axes labels across many rows or columns.</p>
+</dd>
 <dt id="term-MAP_LABEL_OFFSET"><strong>MAP_LABEL_OFFSET</strong><a class="headerlink" href="#term-MAP_LABEL_OFFSET" title="Permalink to this term">¶</a></dt><dd><p>Distance from base of axis annotations to the top of the axis label
 [default is <a class="reference internal" href="theme-settings.html"><span class="doc">theme dependent</span></a>]. Choose <strong>auto</strong>
-for <a class="reference internal" href="cookbook/features.html#auto-scaling"><span class="std std-ref">automatic scaling with plot size</span></a>.</p>
+for <a class="reference internal" href="cookbook/features.html#auto-scaling"><span class="std std-ref">automatic scaling with plot size</span></a>. To
+set different offsets for the <em>x</em> and <em>y</em> axes, separate distances
+by a slash (e.g., <strong>8p/12p</strong> for 8p offset for the x-axis and 12p
+offset for the y-axis)</p>
 </dd>
 <dt id="term-MAP_LINE_STEP"><strong>MAP_LINE_STEP</strong><a class="headerlink" href="#term-MAP_LINE_STEP" title="Permalink to this term">¶</a></dt><dd><p>Determines the maximum length (&gt; 0) of individual straight
 line-segments when drawing arcuate lines [default is <strong>0.75p</strong>]</p>
@@ -1499,8 +1509,8 @@ translated to the respective values of <a class="reference internal" href="#term
 </dd>
 <dt id="term-TIME_UNIT"><strong>TIME_UNIT</strong><a class="headerlink" href="#term-TIME_UNIT" title="Permalink to this term">¶</a></dt><dd><p>Specifies the units of relative time data since epoch (see
 <a class="reference internal" href="#term-TIME_EPOCH"><span class="xref std std-term">TIME_EPOCH</span></a>). Choose <strong>y</strong> (year - assumes all years are 365.2425
-days), <strong>o</strong> (month - assumes all months are of equal length y/12), <strong>d</strong>
-(day), <strong>h</strong> (hour), <strong>m</strong> (minute), or <strong>s</strong> (second) [default is <strong>s</strong>].</p>
+days), <strong>o</strong> (month - assumes all months are of equal length y/12), <em>ww</em>
+(week) <strong>d</strong> (day), <strong>h</strong> (hour), <strong>m</strong> (minute), or <strong>s</strong> (second) [default is <strong>s</strong>].</p>
 </dd>
 <dt id="term-TIME_WEEK_START"><strong>TIME_WEEK_START</strong><a class="headerlink" href="#term-TIME_WEEK_START" title="Permalink to this term">¶</a></dt><dd><p>When weeks are indicated on time axes, this parameter determines the
 first day of the week for Gregorian calendars. (The ISO weekly
@@ -1540,7 +1550,7 @@ correspond to 1800 through 1828. [default is <strong>1950</strong>].</p>
     <p>
         &#169; Copyright 2021, The GMT Team..
       <span class="lastupdated">
-        Last updated on Jun 06, 2021.
+        Last updated on Aug 19, 2021.
       </span>
 
     </p>

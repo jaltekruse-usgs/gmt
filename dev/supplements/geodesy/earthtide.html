@@ -134,15 +134,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../std-opts-classic.html">Common Options (Classic Mode)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modules-classic.html">Modules (Classic Mode)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<p class="caption"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../debug.html">Debugging GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../devdocs.html">Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/team.html">Team Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/debug.html">Debugging GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/devdocs.html">GMT Enhancement Proposals</a></li>
 </ul>
 
             
@@ -293,7 +294,7 @@ If <strong>-G</strong> is set but not <strong>-C</strong> then the default is to
 </dl>
 <span class="target" id="i"></span><dl class="simple">
 <dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. <strong>Geographical
-(degrees) coordinates</strong>: Optionally, append a increment unit. Choose among
+(degrees) coordinates</strong>: Optionally, append an increment unit. Choose among
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
 instead, the increment is assumed to be given in meter, foot, km, Mile,
@@ -320,17 +321,17 @@ to override these values.</p>
 </dd>
 </dl>
 <dl class="simple" id="t">
-<dt><strong>-T</strong>[<em>min/max</em>/]<em>inc</em>[<strong>+i</strong>|<strong>n</strong>] |<a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong><em>file</em>|<em>list</em></dt><dd><p>Make evenly spaced time-steps from <em>min</em> to <em>max</em> by <em>inc</em>. Append +n to indicate <em>inc</em> is the number of t-values
-to produce over the range instead. Append a valid time unit (d|h|m|s) to the increment. If only <em>min</em> is given then
-we use that date and time for the calculations.  If no <strong>-T</strong> is provided get
-current time in UTC from the computer clock. If no <strong>-G</strong> or <strong>-S</strong> are provided then <strong>-T</strong> is interpreted to mean compute
-a time-series at the location specified by <strong>-L</strong>, thus then <strong>-L</strong> becomes mandatory.
-When <strong>-G</strong> and <strong>-T</strong>, only first time T series is considered. Finally, dates may range from 1901 through 2099.
-For details on array creation, see <a class="reference internal" href="#generate-1d-array">Generate 1D Array</a>.</p>
+<dt><strong>-T</strong>[<em>min/max</em>/]<em>inc</em>[<strong>+i</strong>|<strong>n</strong>] |<a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong><em>file</em>|<em>list</em></dt><dd><p>Make evenly spaced time-steps from <em>min</em> to <em>max</em> by <em>inc</em>. Append <strong>+i</strong> to indicate the reciprocal increment was given,
+or append <strong>+n</strong> to indicate <em>inc</em> is the number of <em>t</em>-values to produce over the range instead. Append a valid time
+unit (<strong>d</strong>|<strong>h</strong>|<strong>m</strong>|<strong>s</strong>) to the increment. If only <em>min</em> is given then we use that date and time for the
+calculations.  If no <strong>-T</strong> is provided get current time in UTC from the computer clock. If no <strong>-G</strong> or <strong>-S</strong> are
+provided then <strong>-T</strong> is interpreted to mean compute a time-series at the location specified by <strong>-L</strong>, thus then <strong>-L</strong>
+becomes mandatory. When <strong>-G</strong> and <strong>-T</strong>, only first time T series is considered. Finally, dates may range from 1901
+through 2099. For details on array creation, see <a class="reference internal" href="#generate-1d-array">Generate 1D Array</a>.</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="../../gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output.  </p>
+<dt><strong>-bo</strong><em>record</em>[<strong>+b</strong>|<strong>l</strong>] <a class="reference internal" href="../../gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for table output.  </p>
 </dd>
 </dl>
 <dl class="simple">
@@ -506,7 +507,7 @@ Alternatively, append <strong>+e</strong> to keep <em>inc</em> exact and adjust 
     <p>
         &#169; Copyright 2021, The GMT Team..
       <span class="lastupdated">
-        Last updated on Jun 06, 2021.
+        Last updated on Aug 19, 2021.
       </span>
 
     </p>
