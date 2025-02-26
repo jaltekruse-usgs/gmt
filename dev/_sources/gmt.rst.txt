@@ -12,13 +12,13 @@ Introduction
 ------------
 
 GMT is a collection of freely available command-line tools under the GNU LGPL that allows you to
-manipulate x,y and x,y,z data sets (filtering, trend fitting, gridding,
+manipulate *x, y* and *x, y, z* data sets (filtering, trend fitting, gridding,
 projecting, etc.) and produce illustrations ranging from
 simple x-y plots, via contour maps, to artificially illuminated surfaces
-and 3-D perspective views in black/white or full color. Linear, log10,
+and 3-D perspective views in black/white or full color. Linear, :math:`\log_{10}`,
 and power scaling is supported in addition to over 30 common map
 projections. The processing and display routines within GMT are
-completely general and will handle any (x,y) or (x,y,z) data as input.
+completely general and will handle any (*x, y*) or (*x, y, z*) data as input.
 
 Synopsis
 --------
@@ -62,7 +62,8 @@ Synopsis
 **gmt end** [**show**]
     Terminates a GMT modern mode session and automatically converts the registered
     illustration(s) to their specified formats, then eliminates the temporary work
-    directory.  The figures are placed in the current directory.
+    directory.  The figures are placed in the current directory. Appending the optional
+    directive **show** automatically opens the illustration in the default viewer.
 
 For information on any module, load the module documentation
 in your browser via gmt :doc:`docs`, e.g.::
@@ -75,14 +76,14 @@ If no module is given then several other options are available:
     List and description of GMT modules.
 
 **--new-script**\ [=\ *L*]
-    Write a GMT modern mode script template to stdout. Optionally append the desired
+    Write a GMT modern mode script template to standard output. Optionally append the desired
     scripting language among *bash*, *csh*, or *batch*.  Default is the main shell
     closest to your current shell (e.g., bash for zsh, csh for tcsh).
 
 **--new-glue**\ =\ *name*
     Write the C code glue needed when building third-party supplements as shared
     libraries.  The *name* is the name of the shared library. Run **gmt** in the directory
-    of the supplement and the glue code will be written to *stdout*.  Including this C code
+    of the supplement and the glue code will be written to standard output.  Including this C code
     when building the shared library means **gmt** can list available modules via the
     **--show-modules**, **--help** options.  We recommend saving the code to gmt\_\ *name*\_glue.c.
 
@@ -93,13 +94,16 @@ If no module is given then several other options are available:
     Show the citation for the latest GMT publication.
 
 **--show-classic**
-    List classic module names on stdout and exit.
+    List classic module names on standard output and exit.
 
 **--show-classic-core**
-    List classic module names (core only) on stdout and exit.
+    List classic module names (core only) on standard output and exit.
 
 **--show-cores**
     Show number of available cores.
+
+**--show-date**
+    Show GMT binary building date and exit.
 
 **--show-datadir**
     Show data directory/ies and exit.
@@ -107,14 +111,20 @@ If no module is given then several other options are available:
 **--show-dataserver**
     Show URL of the remote GMT data server.
 
+**--show-dcw**
+    Show the DCW data version used.
+
 **--show-doi**
     Show the DOI of the current release.
 
+**--show-gshhg**
+    Show the GSHHG data version used.
+
 **--show-modules**
-    List modern module names on stdout and exit.
+    List modern module names on standard output and exit.
 
 **--show-modules-core**
-    List modern module names (core only) on stdout and exit.
+    List modern module names (core only) on standard output and exit.
 
 **--show-library**
     Show the path of the shared GMT library.
@@ -144,7 +154,7 @@ The completion rules are either installed in ``/etc/bash_completion.d/gmt``
 or ``<prefix>/share/tools/gmt_completion.bash``.  Depending on the
 distribution, you may still need to source the gmt completion file from
 ``~/.bash_completion`` or ``~/.bashrc``.  For more information see Section
-:ref:`command-line-completion` in the CookBook.
+:ref:`command-line-completion` in the Technical Reference.
 
 GMT Modules
 -----------
@@ -201,12 +211,12 @@ These are all the common GMT options that remain the same for all GMT
 modules. No space between the option flag and the associated arguments.
 
 .. _-B_full:
-.. |Add_-B| replace:: :ref:`(See cookbook information) <cookbook/options:Map frame and axes annotations: The **-B** option>`.
+.. |Add_-B| replace:: :ref:`(See technical reference) <reference/options:Map frame and axes annotations: The **-B** option>`.
 .. include:: explain_-B.rst_
 
 .. _-J_full:
-.. |Add_-J| replace:: :ref:`(See cookbook summary)
-    <cookbook/options:Coordinate transformations and map projections: The **-J** option>`
+.. |Add_-J| replace:: :ref:`(See technical reference)
+    <reference/options:Coordinate transformations and map projections: The **-J** option>`
     :ref:`(See projections table) <proj-codes>`.
 .. include:: explain_-J.rst_
 
@@ -219,7 +229,7 @@ modules. No space between the option flag and the associated arguments.
 .. include:: explain_-Jproj_full.rst_
 
 .. _-R_full:
-.. |Add_-R| replace:: :ref:`(See cookbook information) <cookbook/options:Data domain or map region: The **-R** option>`.
+.. |Add_-R| replace:: :ref:`(See technical reference) <reference/options:Data domain or map region: The **-R** option>`.
 .. include:: explain_-R.rst_
 
 .. _-Rz_full:
@@ -228,15 +238,15 @@ modules. No space between the option flag and the associated arguments.
 .. include:: explain_-Rz_full.rst_
 
 .. _-U_full:
-.. |Add_-U| replace:: :ref:`(See cookbook information) <cookbook/options:Timestamps on plots: The **-U** option>`.
+.. |Add_-U| replace:: :ref:`(See technical reference) <reference/options:Timestamps on plots: The **-U** option>`.
 .. include:: explain_-U.rst_
 
 .. _-V_full:
-.. |Add_-V| replace:: :ref:`(See cookbook information) <cookbook/options:Verbose feedback: The **-V** option>`.
+.. |Add_-V| replace:: :ref:`(See technical reference) <reference/options:Verbose feedback: The **-V** option>`.
 .. include:: explain_-V.rst_
 
 .. _-XY_full:
-.. |Add_-XY| replace:: :ref:`(See cookbook information) <cookbook/options:Plot positioning and layout: The **-X** **-Y** options>`.
+.. |Add_-XY| replace:: :ref:`(See technical reference) <reference/options:Plot positioning and layout: The **-X** **-Y** options>`.
 .. include:: explain_-XY.rst_
 
 .. _-aspatial_full:
@@ -354,6 +364,7 @@ Module help and configuration
 .. include:: explain_precision.rst_
 
 .. include:: explain_grd_inout.rst_
+    :end-before: .. description-ends
 
 Classic Mode Options
 --------------------
@@ -375,6 +386,12 @@ directories. For an explanation of the various GMT settings in this
 man page (like :term:`FORMAT_FLOAT_OUT`), see the man page of the GMT
 configuration file :doc:`gmt.conf`. Information is also available on the
 GMT documentation site https://docs.generic-mapping-tools.org/
+
+Deprecations
+------------
+
+- 6.3.0: Update -g syntax. `#5617 <https://github.com/GenericMappingTools/gmt/pull/5617>`_
+- 6.3.0: Update -JG syntax to use modifiers. `#5780 <https://github.com/GenericMappingTools/gmt/pull/5780>`_
 
 See Also
 --------

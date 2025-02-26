@@ -15,8 +15,8 @@ Synopsis
 **gmt psmeca** [ *table* ]
 |-J|\ *parameters*
 |SYN_OPT-R|
-|-S|\ *format*\ [*scale*]\ [**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+o**\ *dx*\ [/*dy*]]
-[ |-A|\ [**+p**\ *pen*][**+s**\ *size*] ]
+|-S|\ *format*\ [*scale*][**+a**\ *angle*][**+f**\ *font*][**+j**\ *justify*][**+l**][**+m**][**+o**\ *dx*\ [/*dy*]][**+s**\ *reference*]
+[ |-A|\ [**+g**\ [*fill*]][**+o**\ *dx*\ [/*dy*]][**+p**\ *pen*][**+s**\ [*symbol*]\ *size*] ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *cpt* ]
 [ |-D|\ *depmin*/*depmax* ]
@@ -27,11 +27,10 @@ Synopsis
 [ |-I|\ [*intens*] ]
 [ |-K| ]
 [ |-L|\ [*pen*] ]
-[ |-M| ]
 [ |-N| ]
 [ |-O| ]
 [ |-P| ]
-[ |-T|\ *nplane*\ [*pen*] ]
+[ |-T|\ [*plane*]\ [**+p**\ *pen*] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
 [ |-W|\ *pen* ]
@@ -47,7 +46,9 @@ Synopsis
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
-.. include:: meca_common.rst_
+.. include:: meca.rst
+    :start-after: .. module_common_begins
+    :end-before: .. module_common_ends
 
 .. include:: ../../common_classic.rst_
 

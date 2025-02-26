@@ -18,7 +18,7 @@ Synopsis
 |-J|\ *parameters*
 |SYN_OPT-R|
 |-M|\ *size*\ [**+m**\ *mag*]
-|-S|\ *<symbol><size>*
+|-S|\ **a**\|\ **c**\|\ **d**\|\ **h**\|\ **i**\|\ **p**\|\ **s**\|\ **t**\|\ **x**\ *size*
 [ |SYN_OPT-B| ]
 [ |-E|\ *fill* ]
 [ |-F|\ *fill* ]
@@ -41,7 +41,9 @@ Synopsis
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
-.. include:: polar_common.rst_
+.. include:: polar.rst
+    :start-after: .. module_common_begins
+    :end-before: .. module_common_ends
 
 .. include:: ../../common_classic.rst_
 
